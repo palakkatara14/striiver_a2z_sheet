@@ -1,0 +1,14 @@
+class Solution {
+    static ArrayList<Long> factorialNumbers(long n) {
+         ArrayList<Long> ls=new ArrayList<>();
+         long fact=1;
+         long i =1;
+         while(fact<=n){
+             ls.add(fact);
+             i++;
+             fact*=i;
+         }
+        
+         return ls;
+    }
+}
