@@ -1,0 +1,12 @@
+class Solution {
+    int sumOfSeries(int n) {
+        int sum=0;
+        if(n==0){
+            return 0;
+        }
+        sum=sumOfSeries(n-1);
+        sum+=Math.pow(n,3);
+        return sum;
+        
+    }
+}
