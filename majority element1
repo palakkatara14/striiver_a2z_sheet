@@ -1,0 +1,44 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+        //brute force
+        /*int n=nums.length;
+        for(int i=0;i<n;i++){
+            int count=0;
+            for(int j=0;j<n;j++){
+                if(nums[i]==nums[j]){
+                    count++;
+                }
+            }
+            if(count>=n/2){
+                 return nums[i];
+            }
+        }
+        //sorting
+        return nums[0];*/
+       /* Arrays.sort(nums);
+        return nums[nums.length / 2];*/
+
+
+       
+       //hashmap
+        HashMap<Integer,Integer> map=new HashMap<>();
+        /*for(int i=0;i<nums.length;i++){
+            map.put(nums[i],map.getOrDefault(nums[i],0)+1);
+            if(map.get(nums[i])>nums.length/2){
+                return nums[i];
+            }
+        }
+        return nums[0];*/
+       
+        for (int i = 0; i < nums.length; i++) {
+            int key = nums[i];
+            map.put(key, map.getOrDefault(key, 0) + 1);
+
+            // Check if this element is the majority element
+            if (map.get(key) > nums.length / 2) {
+                return key;
+            }
+        }
+        return -1;
+    }
+}
