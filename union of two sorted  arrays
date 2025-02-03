@@ -1,0 +1,19 @@
+class Solution {
+   
+    public static ArrayList<Integer> findUnion(int a[], int b[]) {
+        TreeSet<Integer> set=new TreeSet<>();
+       ArrayList<Integer> ls=new ArrayList<>();
+       int i;
+      
+       for(i=0;i<a.length;i++){
+             set.add(a[i]) ;   
+       }
+       for(i=0;i<b.length;i++){
+           set.add(b[i]);
+       }
+       for(int union:set){
+           ls.add(union);
+       }
+       return ls;
+    }
+}
